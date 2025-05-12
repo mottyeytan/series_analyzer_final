@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "the_series_anylzer/1.0.0": {
+        "runtime": {
+          "the_series_anylzer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "the_series_anylzer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

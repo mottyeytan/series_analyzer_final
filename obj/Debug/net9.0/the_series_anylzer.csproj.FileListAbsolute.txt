@@ -1,0 +1,14 @@
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/bin/Debug/net9.0/the_series_anylzer
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/bin/Debug/net9.0/the_series_anylzer.deps.json
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/bin/Debug/net9.0/the_series_anylzer.runtimeconfig.json
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/bin/Debug/net9.0/the_series_anylzer.dll
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/bin/Debug/net9.0/the_series_anylzer.pdb
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.AssemblyInfoInputs.cache
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.AssemblyInfo.cs
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.csproj.CoreCompileInputs.cache
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.dll
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/refint/the_series_anylzer.dll
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.pdb
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.genruntimeconfig.cache
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/ref/the_series_anylzer.dll
