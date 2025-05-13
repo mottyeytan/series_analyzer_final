@@ -45,7 +45,11 @@
 
             foreach (string num in nums)
             {
-              if (!int.TryParse(num, out temp)||temp<0)return false;
+                if (!int.TryParse(num, out temp) || temp < 0)
+                {
+                    Console.WriteLine("invalid number: it must be a number or a positive integer");
+                    return false;
+                }
               lst.Add(temp);
             }
             length = lst.Count;
