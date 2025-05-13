@@ -89,6 +89,11 @@
              
             return true;
         }
+
+        static bool GetInputOption(string input)
+        {
+            string userInput = Console.ReadLine();
+        }
         
         
         
