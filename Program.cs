@@ -90,9 +90,10 @@
             return true;
         }
 
-        static bool GetInputOption(string input)
+        static string GetInputOption(string input)
         {
-            string userInput = Console.ReadLine();
+           string userInput = Console.ReadLine();
+           return userInput;
         }
         
         
