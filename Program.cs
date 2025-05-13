@@ -77,6 +77,18 @@
     
             Console.Write("   Select option: ");
         }
+
+        static bool ValidateMenu(string input)
+        {
+            string[] options = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+            if (!options.Contains(input))
+            {
+                Console.WriteLine("please choose only between a and j");
+                return false;
+            }
+             
+            return true;
+        }
         
         
         
