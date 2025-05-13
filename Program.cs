@@ -56,6 +56,27 @@
             series = lst;
             return true;
         }
+
+        static void DisplayMenu()
+        {
+            Console.WriteLine("\n-------- NUMBER SERIES MENU --------\n");
+    
+            Console.WriteLine("   a │ Enter a new series");
+            Console.WriteLine("   ──┼────────────────────────────────");
+            Console.WriteLine("   b │ Display series (original order)");
+            Console.WriteLine("   c │ Display series (reversed)");
+            Console.WriteLine("   d │ Display series (sorted)");
+            Console.WriteLine("   ──┼────────────────────────────────");
+            Console.WriteLine("   e │ Show maximum value");
+            Console.WriteLine("   f │ Show minimum value");
+            Console.WriteLine("   g │ Show average");
+            Console.WriteLine("   h │ Show count");
+            Console.WriteLine("   i │ Show sum");
+            Console.WriteLine("   ──┼────────────────────────────────");
+            Console.WriteLine("   j │ Exit\n");
+    
+            Console.Write("   Select option: ");
+        }
         
         
         
