@@ -16,12 +16,20 @@
             else
             {
                 string input = null;
-                while (input != "-1")
+                while (input != "-1" || list.Count <= 3)
                 {
-                    Console.WriteLine("please enter a number" +
+                    Console.WriteLine("please enter at least 3 numbers" +
                                       "for exit enter -1");
                     input = Console.ReadLine();
-                    if (input == "-1") break;
+                    if (input == "-1" || list.Count >= 3)
+                    {
+                        break;
+                    }
+                    else if (input == "-1" || list.Count < 3)
+                    {
+                        Console.WriteLine("you must enter at least 3 numbers");
+                        continue;
+                    }
                     list.Add(input);
                 }
             }
