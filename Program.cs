@@ -113,10 +113,27 @@
             
         }
 
-        static string GetSeries(string input)
+        static string GetSeries_A()
         {
-            string SeriesInput = Console.ReadLine();
+            string SeriesInput;
+            List<string> lst;
+            
+            do
+            {
+                SeriesInput = Console.ReadLine();
+                lst = new List<string>(SeriesInput.Split(','));
+
+            } while (!Intinal(lst));
             return SeriesInput;
+                
+        }
+
+        static List<string> DisaplySeries_B(string input)
+        {
+            string series = GetSeries_A();
+            List<string> lst;
+            lst = new List<string>(input.Split(','));
+            return lst;
         }
         
 
