@@ -3,7 +3,8 @@
     class Program
     {
         
-        static List<int> series;
+        static List<int> series; 
+        static string GetOption; 
         static int length = 0;
 
         static List<string> ReciveListOfNums(string[] args)
@@ -80,28 +81,47 @@
 
         static bool ValidateMenu(string input)
         {
+            Console.WriteLine(input);
             string[] options = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
             if (!options.Contains(input))
             {
                 Console.WriteLine("please choose only between a and j");
                 return false;
             }
-             
+
+            GetOption = input;
             return true;
         }
 
-        static string GetInputOption(string input)
+        static string GetInputOption()
         {
            string userInput = Console.ReadLine();
            return userInput;
         }
-        
+
+
+        static void ActivateOptions(string input)
+        {
+            while (true)
+            {
+                switch (input)
+                {
+                    case "a":
+                    
+                } 
+            }
+            
+        }
         
         
 
         static void Main(string[] args) 
         {
+            // validate the input and put them into list
             while (!Intinal(ReciveListOfNums(args))){}
+           
+            
+            while (!ValidateMenu(GetInputOption())){}
             
  
         }

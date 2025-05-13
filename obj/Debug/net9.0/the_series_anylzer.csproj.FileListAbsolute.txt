@@ -12,3 +12,4 @@
 /Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.pdb
 /Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.genruntimeconfig.cache
 /Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/ref/the_series_anylzer.dll
+/Users/mottyeytan/Desktop/project_1/the_series_anylzer/obj/Debug/net9.0/the_series_anylzer.sourcelink.json
