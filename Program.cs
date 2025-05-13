@@ -135,6 +135,16 @@
             lst = new List<string>(input.Split(','));
             return lst;
         }
+
+        static List<string> DisaplySeriesBackwords_C(string input)
+        {
+            string series = GetSeries_A();
+            List<string> lst;
+            lst = new List<string>(input.Split(','));
+            lst.Reverse();
+            return lst;
+        }
+        
         
 
         static void Main(string[] args) 
