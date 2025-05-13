@@ -112,8 +112,11 @@
             }
             
         }
+        
+        
 
-        static string GetSeries_A()
+
+        static List<int> GetSeries_A()
         {
             string SeriesInput;
             List<string> lst;
@@ -124,26 +127,26 @@
                 lst = new List<string>(SeriesInput.Split(','));
 
             } while (!Intinal(lst));
-            return SeriesInput;
-                
+
+            List<int> intList = lst.ConvertAll(x => int.Parse(x.Trim()));
+
+            return intList;
+
         }
 
-        static List<string> DisaplySeries_B(string input)
+        static List<int> DisaplySeries_B(string input)
         {
-            string series = GetSeries_A();
-            List<string> lst;
-            lst = new List<string>(input.Split(','));
-            return lst;
+            List<int> series = GetSeries_A();
+            return series;
         }
 
-        static List<string> DisaplySeriesBackwords_C(string input)
+        static List<int> DisaplySeriesBackwords_C(string input)
         {
-            string series = GetSeries_A();
-            List<string> lst;
-            lst = new List<string>(input.Split(','));
-            lst.Reverse();
-            return lst;
+            List<int> series = GetSeries_A();
+            series.Reverse();
+            return series;
         }
+
         
         
 
