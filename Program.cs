@@ -3,7 +3,7 @@
     class Program
     {
         
-        List<int> series = new List<int>();
+        static List<int> series;
         static int length = 0;
 
         static List<string> ReciveListOfNums(string[] args)
@@ -27,14 +27,33 @@
             }
             return list;
         }
+
+        static bool Intinal(List<string> nums)
+        {
+            if (nums.Count < 3) return false; 
+            
+            List<int> lst = new List<int>();
+            int temp = 0;
+
+            foreach (string num in nums)
+            {
+              if (!int.TryParse(num, out temp)||temp<0)return false;
+              lst.Add(temp);
+            }
+            length = lst.Count;
+            series = lst;
+            return true;
+        }
         
         
         
 
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
-           recivelistofnums(args);
-            }
+            while (!Intinal(ReciveListOfNums(args))){}
+            
+ 
+        }
             
         
                  
