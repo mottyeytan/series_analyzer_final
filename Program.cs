@@ -112,7 +112,12 @@
             }
             
         }
-        
+
+        static string GetSeries(string input)
+        {
+            string SeriesInput = Console.ReadLine();
+            return SeriesInput;
+        }
         
 
         static void Main(string[] args) 
