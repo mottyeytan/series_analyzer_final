@@ -192,6 +192,18 @@
             Console.WriteLine(add/series.Count);
         }
 
+        static void DisplayCount_H()
+        {
+            List<int> series = GetSeries_A();
+            int count = 0;
+            foreach (int i in series)
+            {
+                count++;
+            }
+
+            Console.WriteLine(count);
+        }
+
         
         
 
