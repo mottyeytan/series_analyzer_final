@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("the_series_anylzer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f6c75540e2a73640687927a38fcf477d3ded0d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df9b1822225af49b5ec599e74ee22e68bde33ca3")]
 [assembly: System.Reflection.AssemblyProductAttribute("the_series_anylzer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("the_series_anylzer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

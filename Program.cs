@@ -2,20 +2,18 @@
 {
     class Program
     {
-        
-        static List<int> series; 
+        static List<int> series = new List<int>();
         static string GetOption; 
-        static int length = 0;
         
         //recive the args or input and return it as a list
         static List<string> ReciveListOfNums(string[] args)
         {
             if (args.Length == 0)
             {
-                Console.WriteLine();
+                Console.WriteLine("please enter at least 3 numbers");
                 string input = Console.ReadLine();
-                List<string> series = new List<string>(input.Split());
-                return series;
+                List<string> series1 = new List<string>(input.Split());
+                return series1;
             }
             List<string> argslst = args.ToList();
             return argslst;
@@ -25,8 +23,6 @@
         static bool ValidateSeries(List<string> nums)
         {
             if (nums.Count < 3) return false;
-            
-            List<int> lst = new List<int>();
 
             foreach (string item in nums)
             {
@@ -38,6 +34,12 @@
             return true;
         }
         
+        
+        //convert the input to list<int>
+        static void ConvertInputToInt(List<string> inputList)
+        {
+            series = inputList.Select(int.Parse).ToList();
+        }
         
         
         // display the menu
@@ -64,7 +66,6 @@
         // validate menu. checks if he chooesed in the range of the options.
         static bool ValidateMenu(string input)
         {
-            Console.WriteLine(input);
             string[] options = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
             if (!options.Contains(input))
             {
@@ -86,46 +87,41 @@
         // take the input and returns the right function
         static void ActivateOptions(string input)
         {
-            bool exit = false;
-            
-            while (exit)
+            switch (input)
             {
-                switch (input)
-                {
-                    case "a":
-                        GetSeries_A();
-                        break;
-                    case "b":
-                        DisaplySeries_B();
-                        break;
-                    case "c":
-                        DisaplySeriesBackwords_C();
-                        break;
-                    case "d":
-                        DisplaySorted_D();
-                        break;
-                    case "e":
-                        DisplayMax_E();
-                        break;
-                    case "f":
-                        DisplayMin_F();
-                        break;
-                    case "g":
-                        DisplayAverage_G();
-                        break;
-                    case "h":
-                        DisplayCount_H();
-                        break;
-                    case "i":
-                        exit = true;
-                        break;
-                } 
+                case "a":
+                    GetSeries_A();
+                    break;
+                case "b":
+                    DisaplySeries_B();
+                    break;
+                case "c":
+                    DisaplySeriesBackwords_C();
+                    break;
+                case "d":
+                    DisplaySorted_D();
+                    break;
+                case "e":
+                    DisplayMax_E();
+                    break;
+                case "f":
+                    DisplayMin_F();
+                    break;
+                case "g":
+                    DisplayAverage_G();
+                    break;
+                case "h":
+                    DisplayCount_H();
+                    break;
+                case "i":
+                    DisplaySum_J();
+                    break;
+                case "j":
+                    // לא צריך לעשות כלום - ה-Main מטפל ביציאה
+                    break;
             }
-            
         }
         
-        
-
 
         static List<int> GetSeries_A()
         {
@@ -140,6 +136,8 @@
             } while (!ValidateSeries(lst));
 
             List<int> intList = lst.ConvertAll(x => int.Parse(x.Trim()));
+            
+            series = intList;
 
             return intList;
 
@@ -147,7 +145,7 @@
 
         static void DisaplySeries_B()
         {
-            List<int> series = GetSeries_A();
+            
             for (int i = 0; i < series.Count -1 ; i++)
             {
                 Console.Write($"{series[i]}, ");
@@ -158,8 +156,8 @@
 
         static void DisaplySeriesBackwords_C()
         {
-            List<int> series = GetSeries_A();
-            for (int i = series.Count -1 ; i >= 0 ; i--)
+            
+            for (int i = series.Count -1 ; i > 0 ; i--)
             {
                 Console.Write($"{series[i]}, ");
             }
@@ -169,7 +167,7 @@
 
         static void DisplaySorted_D()
         {
-            List<int> series = GetSeries_A();
+           
             for (int i = 0; i < series.Count; i++)
             {
                 bool swapped = false;
@@ -177,8 +175,9 @@
                 {
                     if (series[j] > series[j + 1])
                     {
+                        int temp = series[j];
                         series[j] = series[j + 1];
-                        series[j + 1] = series[j];
+                        series[j + 1] = temp;
                         swapped = true;
                     }
                     if (swapped) break;
@@ -189,7 +188,7 @@
 
         static void DisplayMax_E()
         {
-            List<int> series = GetSeries_A();
+            
             int max = series[0];
 
             foreach (var i in series)
@@ -201,7 +200,7 @@
 
         static void DisplayMin_F()
         {
-            List<int> series = GetSeries_A();
+            
             int min = series[0];
             foreach (var i in series)
             {
@@ -212,7 +211,7 @@
 
         static void DisplayAverage_G()
         {
-            List<int> series = GetSeries_A();
+            
             int add = 0;
             foreach (int i in series)
             {
@@ -223,7 +222,7 @@
 
         static void DisplayCount_H()
         {
-            List<int> series = GetSeries_A();
+            
             int count = 0;
             foreach (int i in series)
             {
@@ -233,9 +232,9 @@
             Console.WriteLine(count);
         }
 
-        static void DisplaySum_I()
+        static void DisplaySum_J()
         {
-            List<int> series = GetSeries_A();
+           
             int sum = 0;
             foreach (int i in series)
             {
@@ -244,28 +243,31 @@
             Console.WriteLine(sum);
         }
         
-        
-
-        
-        
-
         static void Main(string[] args) 
         {
             // validate the input and put them into list
-            while (!ValidateSeries(ReciveListOfNums(args))){}
+            List<string> inputList;
+            do
+            {
+                inputList = ReciveListOfNums(args);
+                args = new string[0];
+            } while (!ValidateSeries(inputList));
+    
+            ConvertInputToInt(inputList);
             
-            DisplayMenu();
-           
             
-            while (!ValidateMenu(GetInputOption())){}
             
- 
-        }
-            
-        
-                 
+            while (true)
+            {
                 
-           
-       
+                DisplayMenu();
+                while (!ValidateMenu(GetInputOption())) {}
+        
+                if (GetOption == "j") break;
+        
+                ActivateOptions(GetOption);
+            }
+            
+        }
     }
 }
