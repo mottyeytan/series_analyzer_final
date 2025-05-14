@@ -158,6 +158,18 @@
             foreach (int i in series) Console.Write($"{i}, ");
         }
 
+        static void DisplayMax_E()
+        {
+            List<int> series = GetSeries_A();
+            int max = series[0];
+
+            foreach (var i in series)
+            {
+                if (i > max) max = i;
+            }
+            Console.WriteLine(max);
+        }
+
         
         
 
