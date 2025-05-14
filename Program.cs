@@ -204,6 +204,17 @@
             Console.WriteLine(count);
         }
 
+        static void DisplaySum_I()
+        {
+            List<int> series = GetSeries_A();
+            int sum = 0;
+            foreach (int i in series)
+            {
+                sum += i;
+            }
+            Console.WriteLine(sum);
+        }
+
         
         
 
