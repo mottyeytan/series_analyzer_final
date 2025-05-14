@@ -9,54 +9,36 @@
 
         static List<string> ReciveListOfNums(string[] args)
         {
-            List<string> list = new List<string>();
-            if (args.Length >= 3)
+            if (args.Length == 0)
             {
-                list = new List<string>(args);
+                Console.WriteLine();
+                string input = Console.ReadLine();
+                List<string> series = new List<string>(input.Split());
+                return series;
             }
-            else
-            {
-                string input = null;
-                while (input != "-1" || list.Count <= 3)
-                {
-                    Console.WriteLine("please enter at least 3 numbers" +
-                                      "for exit enter -1");
-                    input = Console.ReadLine();
-                    if (input == "-1" || list.Count >= 3)
-                    {
-                        break;
-                    }
-                    else if (input == "-1" || list.Count < 3)
-                    {
-                        Console.WriteLine("you must enter at least 3 numbers");
-                        continue;
-                    }
-                    list.Add(input);
-                }
-            }
-            return list;
+            List<string> argslst = args.ToList();
+            return argslst;
         }
-
-        static bool Intinal(List<string> nums)
+        
+        //validate the input. || 1: that is bigger tham 3. ||  2:  its a interger  ||  3: positive number || 4: not an extra space
+        static bool ValidateSeries(List<string> nums)
         {
-            if (nums.Count < 3) return false; 
+            if (nums.Count < 3) return false;
             
             List<int> lst = new List<int>();
-            int temp = 0;
 
-            foreach (string num in nums)
+            foreach (string item in nums)
             {
-                if (!int.TryParse(num, out temp) || temp < 0)
-                {
-                    Console.WriteLine("invalid number: it must be a number or a positive integer");
-                    return false;
-                }
-              lst.Add(temp);
+                if (item.Length == 0) return false;
+                if (!item.All(char.IsDigit)) return false;
+                if (item[0] == '-')return false;
+                
             }
-            length = lst.Count;
-            series = lst;
             return true;
         }
+        
+        
+        
 
         static void DisplayMenu()
         {
@@ -100,19 +82,19 @@
         }
 
 
-        static void ActivateOptions(string input)
-        {
-            while (true)
-            {
-                switch (input)
-                {
-                    case "a":
-                    
-                } 
-            }
-            
-        }
-        
+        // static void ActivateOptions(string input)
+        // {
+        //     while (true)
+        //     {
+        //         switch (input)
+        //         {
+        //             case "a":
+        //             
+        //         } 
+        //     }
+        //     1
+        // }
+        //
         
 
 
@@ -124,9 +106,9 @@
             do
             {
                 SeriesInput = Console.ReadLine();
-                lst = new List<string>(SeriesInput.Split(','));
+                lst = new List<string>(SeriesInput.Split(' '));
 
-            } while (!Intinal(lst));
+            } while (!ValidateSeries(lst));
 
             List<int> intList = lst.ConvertAll(x => int.Parse(x.Trim()));
 
@@ -134,17 +116,46 @@
 
         }
 
-        static List<int> DisaplySeries_B(string input)
+        static void DisaplySeries_B(string input)
         {
             List<int> series = GetSeries_A();
-            return series;
+            for (int i = 0; i < series.Count -1 ; i++)
+            {
+                Console.Write($"{series[i]}, ");
+            }
+            Console.Write(series[series.Count-1]);
+            Console.Write("\n");
         }
 
-        static List<int> DisaplySeriesBackwords_C(string input)
+        static void DisaplySeriesBackwords_C(string input)
         {
             List<int> series = GetSeries_A();
-            series.Reverse();
-            return series;
+            for (int i = series.Count -1 ; i >= 0 ; i--)
+            {
+                Console.Write($"{series[i]}, ");
+            }
+            Console.Write(series[0]);
+            Console.Write("\n");
+        }
+
+        static void DisplaySorted_D()
+        {
+            List<int> series = GetSeries_A();
+            for (int i = 0; i < series.Count; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < series.Count - 1; j++)
+                {
+                    if (series[j] > series[j + 1])
+                    {
+                        series[j] = series[j + 1];
+                        series[j + 1] = series[j];
+                        swapped = true;
+                    }
+                    if (swapped) break;
+                }
+            }
+            foreach (int i in series) Console.Write($"{i}, ");
         }
 
         
@@ -153,7 +164,7 @@
         static void Main(string[] args) 
         {
             // validate the input and put them into list
-            while (!Intinal(ReciveListOfNums(args))){}
+            while (!ValidateSeries(ReciveListOfNums(args))){}
            
             
             while (!ValidateMenu(GetInputOption())){}
