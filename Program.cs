@@ -6,7 +6,8 @@
         static List<int> series; 
         static string GetOption; 
         static int length = 0;
-
+        
+        //recive the args or input and return it as a list
         static List<string> ReciveListOfNums(string[] args)
         {
             if (args.Length == 0)
@@ -39,7 +40,7 @@
         
         
         
-
+        // display the menu
         static void DisplayMenu()
         {
             Console.WriteLine("\n-------- NUMBER SERIES MENU --------\n");
@@ -60,7 +61,7 @@
     
             Console.Write("   Select option: ");
         }
-
+        // validate menu. checks if he chooesed in the range of the options.
         static bool ValidateMenu(string input)
         {
             Console.WriteLine(input);
@@ -74,27 +75,55 @@
             GetOption = input;
             return true;
         }
-
+        
+        //input for the menu
         static string GetInputOption()
         {
            string userInput = Console.ReadLine();
            return userInput;
         }
 
-
-        // static void ActivateOptions(string input)
-        // {
-        //     while (true)
-        //     {
-        //         switch (input)
-        //         {
-        //             case "a":
-        //             
-        //         } 
-        //     }
-        //     1
-        // }
-        //
+        // take the input and returns the right function
+        static void ActivateOptions(string input)
+        {
+            bool exit = false;
+            
+            while (exit)
+            {
+                switch (input)
+                {
+                    case "a":
+                        GetSeries_A();
+                        break;
+                    case "b":
+                        DisaplySeries_B();
+                        break;
+                    case "c":
+                        DisaplySeriesBackwords_C();
+                        break;
+                    case "d":
+                        DisplaySorted_D();
+                        break;
+                    case "e":
+                        DisplayMax_E();
+                        break;
+                    case "f":
+                        DisplayMin_F();
+                        break;
+                    case "g":
+                        DisplayAverage_G();
+                        break;
+                    case "h":
+                        DisplayCount_H();
+                        break;
+                    case "i":
+                        exit = true;
+                        break;
+                } 
+            }
+            
+        }
+        
         
 
 
@@ -116,7 +145,7 @@
 
         }
 
-        static void DisaplySeries_B(string input)
+        static void DisaplySeries_B()
         {
             List<int> series = GetSeries_A();
             for (int i = 0; i < series.Count -1 ; i++)
@@ -127,7 +156,7 @@
             Console.Write("\n");
         }
 
-        static void DisaplySeriesBackwords_C(string input)
+        static void DisaplySeriesBackwords_C()
         {
             List<int> series = GetSeries_A();
             for (int i = series.Count -1 ; i >= 0 ; i--)
@@ -214,6 +243,8 @@
             }
             Console.WriteLine(sum);
         }
+        
+        
 
         
         
@@ -222,6 +253,8 @@
         {
             // validate the input and put them into list
             while (!ValidateSeries(ReciveListOfNums(args))){}
+            
+            DisplayMenu();
            
             
             while (!ValidateMenu(GetInputOption())){}
