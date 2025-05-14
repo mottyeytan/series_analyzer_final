@@ -181,6 +181,17 @@
             Console.WriteLine(min);
         }
 
+        static void DisplayAverage_G()
+        {
+            List<int> series = GetSeries_A();
+            int add = 0;
+            foreach (int i in series)
+            {
+                add += i;
+            }
+            Console.WriteLine(add/series.Count);
+        }
+
         
         
 
