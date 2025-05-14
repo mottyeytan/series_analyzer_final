@@ -170,6 +170,17 @@
             Console.WriteLine(max);
         }
 
+        static void DisplayMin_F()
+        {
+            List<int> series = GetSeries_A();
+            int min = series[0];
+            foreach (var i in series)
+            {
+                if (i < min) min = i;
+            }
+            Console.WriteLine(min);
+        }
+
         
         
 
