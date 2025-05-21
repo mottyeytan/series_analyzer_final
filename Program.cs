@@ -117,7 +117,6 @@
                     DisplaySum_J();
                     break;
                 case "j":
-                    // לא צריך לעשות כלום - ה-Main מטפל ביציאה
                     break;
             }
         }
